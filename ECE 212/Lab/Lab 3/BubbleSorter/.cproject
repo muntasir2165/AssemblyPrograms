@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?>
+
+<cproject>
+<storageModule moduleId="org.eclipse.cdt.core.settings">
+<cconfiguration id="nbeclipse.toolchain.nbde.rel.602135517">
+<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="nbeclipse.toolchain.nbde.rel.602135517" moduleId="org.eclipse.cdt.core.settings" name="Release">
+<externalSettings/>
+<extensions>
+<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+<extension id="org.eclipse.cdt.core.VCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+</extensions>
+</storageModule>
+<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+<configuration artifactExtension="s19" artifactName="BubbleSorter_APP" buildProperties="org.eclipse.cdt.make.core.enableAutoBuild=true" cleanCommand="rm -f" description="" id="nbeclipse.toolchain.nbde.rel.602135517" name="Release" parent="nbeclipse.toolchain.nbde.rel">
+<folderInfo id="nbeclipse.toolchain.nbde.rel.602135517." name="/" resourcePath="">
+<toolChain id="nbeclipse.toolchain.nbde.rel.tc.2053442843" name="NetBurner Device" superClass="nbeclipse.toolchain.nbde.rel.tc">
+<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="nbeclipse.toolchain.nbde.rel.tc.targetPlatform.134590747" name="NetBurner Module" superClass="nbeclipse.toolchain.nbde.rel.tc.targetPlatform"/>
+<builder buildPath="${workspace_loc:/BubbleSorter/Release}" enableAutoBuild="true" id="nbeclipse.toolchain.nbde.rel.tc.builder.254470857" managedBuildOn="true" name="Release ELF builder (MINGW).Release" superClass="nbeclipse.toolchain.nbde.rel.tc.builder"/>
+<tool id="nbeclipse.toolchain.nbde.rel.tc.html.1671891384" name="NetBurner Comphtml" superClass="nbeclipse.toolchain.nbde.rel.tc.html"/>
+<tool id="nbeclipse.toolchain.nbde.rel.tc.prom.1674961712" name="FPGA Promgen" superClass="nbeclipse.toolchain.nbde.rel.tc.prom"/>
+<tool id="nbeclipse.toolchain.nbde.rel.tc.cfile.1159009628" name="NetBurner Compfile" superClass="nbeclipse.toolchain.nbde.rel.tc.cfile"/>
+<tool id="nbeclipse.toolchain.nbde.rel.tc.gcc.1751199257" name="GNU C Compiler" superClass="nbeclipse.toolchain.nbde.rel.tc.gcc">
+<option id="nbeclipse.toolchain.super.gcc.cpu.797789457" superClass="nbeclipse.toolchain.super.gcc.cpu" value="-mcpu=5208" valueType="string"/>
+<option id="nbeclipse.toolchain.super.gcc.platform.250837035" superClass="nbeclipse.toolchain.super.gcc.platform" value="MOD5270" valueType="string"/>
+<option id="nbeclipse.toolchain.super.gcc.cpu_type.1033833521" superClass="nbeclipse.toolchain.super.gcc.cpu_type" value="MCF5270" valueType="string"/>
+<option id="nbeclipse.toolchain.super.gcc.directories.includepaths.926463474" superClass="nbeclipse.toolchain.super.gcc.directories.includepaths" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;C:\nburn\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\mod5270\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\gcc-m68k\m68k-elf\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BubbleSorter}&quot;"/>
+</option>
+<inputType id="nbeclipse.toolchain.nbde.rel.tc.gcc.input.502971658" name="GNU C Input" superClass="nbeclipse.toolchain.nbde.rel.tc.gcc.input"/>
+</tool>
+<tool id="nbeclipse.toolchain.nbde.rel.tc.gpp.1547140714" name="GNU C++ Compiler" superClass="nbeclipse.toolchain.nbde.rel.tc.gpp">
+<option id="nbeclipse.toolchain.super.gpp.cpu.1197949329" superClass="nbeclipse.toolchain.super.gpp.cpu" value="-mcpu=5208" valueType="string"/>
+<option id="nbeclipse.toolchain.super.gpp.platform.618603131" superClass="nbeclipse.toolchain.super.gpp.platform" value="MOD5270" valueType="string"/>
+<option id="nbeclipse.toolchain.super.gpp.cpu_type.2051179222" superClass="nbeclipse.toolchain.super.gpp.cpu_type" value="MCF5270" valueType="string"/>
+<option id="nbeclipse.toolchain.super.gpp.directories.includepaths.251684972" superClass="nbeclipse.toolchain.super.gpp.directories.includepaths" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;C:\nburn\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\mod5270\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\gcc-m68k\m68k-elf\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BubbleSorter}&quot;"/>
+</option>
+<inputType id="nbeclipse.toolchain.nbde.rel.tc.gpp.input.1661681829" name="GNU C++ Input" superClass="nbeclipse.toolchain.nbde.rel.tc.gpp.input"/>
+</tool>
+<tool id="nbeclipse.toolchain.nbde.rel.tc.as.745658415" name="GNU Assembler" superClass="nbeclipse.toolchain.nbde.rel.tc.as">
+<option id="nbeclipse.toolchain.super.as.cpu.1066172851" superClass="nbeclipse.toolchain.super.as.cpu" value="-mcpu=5208" valueType="string"/>
+<inputType id="nbeclipse.toolchain.nbde.rel.tc.as.input.1834826342" name="GNU Assembler Input" superClass="nbeclipse.toolchain.nbde.rel.tc.as.input"/>
+</tool>
+<tool id="nbeclipse.toolchain.nbde.rel.tc.link.112281156" name="GNU C/C++ Linker" superClass="nbeclipse.toolchain.nbde.rel.tc.link">
+<option id="nbeclipse.toolchain.super.link.mcpu.722284291" superClass="nbeclipse.toolchain.super.link.mcpu" value="-mcpu=5208" valueType="string"/>
+<option id="nbeclipse.toolchain.super.link.ldflags.1273160612" superClass="nbeclipse.toolchain.super.link.ldflags" value="-Wl -Wl,-n -T&quot;C:\nburn\MOD5270\lib\MOD5270.ld&quot; -Wl,-R&quot;C:\nburn\MOD5270\lib\sys.ld&quot;" valueType="string"/>
+<option id="nbeclipse.toolchain.nbde.rel.tc.link.libs.libs.1676962973" superClass="nbeclipse.toolchain.nbde.rel.tc.link.libs.libs" valueType="stringList">
+<listOptionValue builtIn="false" value="&quot;C:\nburn\lib\MOD5270.a&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\lib\NetBurner.a&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\lib\FatFile.a&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\lib\rtl8711Library.a&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\lib\debugLibrary.a&quot;"/>
+</option>
+</tool>
+<tool id="nbeclipse.toolchain.nbde.rel.tc.objcopy.1341969479" name="GNU ELF Objcopy" superClass="nbeclipse.toolchain.nbde.rel.tc.objcopy"/>
+<tool command="compcode" id="nbeclipse.toolchain.nbde.rel.tc.compcode.976367178" name="NetBurner Compcode" superClass="nbeclipse.toolchain.nbde.rel.tc.compcode">
+<option id="nbeclipse.toolchain.super.compcode.memrange.1999377058" superClass="nbeclipse.toolchain.super.compcode.memrange" value="0xffc08000 0xFFC80000" valueType="string"/>
+<option id="nbeclipse.toolchain.super.compcode.platform.768170209" superClass="nbeclipse.toolchain.super.compcode.platform" value="MOD5270" valueType="string"/>
+</tool>
+</toolChain>
+</folderInfo>
+</configuration>
+</storageModule>
+<storageModule moduleId="scannerConfiguration">
+<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile"/>
+<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="makefileGenerator">
+<runAction arguments="-f ${project_name}_scd.mk" command="make" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileCPP">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileC">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+</storageModule>
+<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+</cconfiguration>
+<cconfiguration id="nbeclipse.toolchain.nbde.debug.1420794989">
+<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="nbeclipse.toolchain.nbde.debug.1420794989" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+<externalSettings/>
+<extensions>
+<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+<extension id="org.eclipse.cdt.core.VCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+</extensions>
+</storageModule>
+<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+<configuration artifactExtension="s19" artifactName="BubbleSorter_APP" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=nbeclipse.core.property.projecttype.s19" cleanCommand="rm -f" description="" id="nbeclipse.toolchain.nbde.debug.1420794989" name="Debug" parent="nbeclipse.toolchain.nbde.debug">
+<folderInfo id="nbeclipse.toolchain.nbde.debug.1420794989." name="/" resourcePath="">
+<toolChain id="nbeclipse.toolchain.nbde.debug.tc.1345187169" name="NetBurner Device" superClass="nbeclipse.toolchain.nbde.debug.tc">
+<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="nbeclipse.toolchain.nbde.debug.tc.targetPlatform.1361315332" name="NetBurner Module" superClass="nbeclipse.toolchain.nbde.debug.tc.targetPlatform"/>
+<builder buildPath="${workspace_loc:/BubbleSorter/Debug}" enableAutoBuild="true" id="nbeclipse.toolchain.nbde.debug.tc.builder.1528478102" managedBuildOn="true" name="Debug ELF builder (MINGW).Debug" superClass="nbeclipse.toolchain.nbde.debug.tc.builder"/>
+<tool id="nbeclipse.toolchain.nbde.debug.tc.html.811617751" name="NetBurner Comphtml" superClass="nbeclipse.toolchain.nbde.debug.tc.html"/>
+<tool id="nbeclipse.toolchain.nbde.debug.tc.gcc.796280340" name="GNU C Compiler" superClass="nbeclipse.toolchain.nbde.debug.tc.gcc">
+<option id="nbeclipse.toolchain.super.gcc.cpu.1417040895" superClass="nbeclipse.toolchain.super.gcc.cpu" value="-mcpu=5208" valueType="string"/>
+<option id="nbeclipse.toolchain.super.gcc.platform.87019015" superClass="nbeclipse.toolchain.super.gcc.platform" value="MOD5270" valueType="string"/>
+<option id="nbeclipse.toolchain.super.gcc.cpu_type.602445372" superClass="nbeclipse.toolchain.super.gcc.cpu_type" value="MCF5270" valueType="string"/>
+<option id="nbeclipse.toolchain.super.gcc.directories.includepaths.174939574" superClass="nbeclipse.toolchain.super.gcc.directories.includepaths" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;C:\nburn\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\mod5270\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\gcc-m68k\m68k-elf\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BubbleSorter}&quot;"/>
+</option>
+<option id="nbeclipse.toolchain.nbde.debug.tc.gcc.preprocessor.defined.1241515699" superClass="nbeclipse.toolchain.nbde.debug.tc.gcc.preprocessor.defined" valueType="stringList">
+<listOptionValue builtIn="false" value="_DEBUG"/>
+</option>
+<inputType id="nbeclipse.toolchain.nbde.debug.tc.gcc.input.373423482" name="GNU C Input" superClass="nbeclipse.toolchain.nbde.debug.tc.gcc.input"/>
+</tool>
+<tool id="nbeclipse.toolchain.nbde.debug.tc.gpp.1740375979" name="GNU C++ Compiler" superClass="nbeclipse.toolchain.nbde.debug.tc.gpp">
+<option id="nbeclipse.toolchain.super.gpp.cpu.1876950728" superClass="nbeclipse.toolchain.super.gpp.cpu" value="-mcpu=5208" valueType="string"/>
+<option id="nbeclipse.toolchain.super.gpp.platform.293009531" superClass="nbeclipse.toolchain.super.gpp.platform" value="MOD5270" valueType="string"/>
+<option id="nbeclipse.toolchain.super.gpp.cpu_type.1218620089" superClass="nbeclipse.toolchain.super.gpp.cpu_type" value="MCF5270" valueType="string"/>
+<option id="nbeclipse.toolchain.super.gpp.directories.includepaths.1288165952" superClass="nbeclipse.toolchain.super.gpp.directories.includepaths" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;C:\nburn\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\mod5270\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\gcc-m68k\m68k-elf\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BubbleSorter}&quot;"/>
+</option>
+<option id="nbeclipse.toolchain.nbde.debug.tc.gpp.preprocessor.defined.1413910577" superClass="nbeclipse.toolchain.nbde.debug.tc.gpp.preprocessor.defined" valueType="stringList">
+<listOptionValue builtIn="false" value="_DEBUG"/>
+</option>
+<inputType id="nbeclipse.toolchain.nbde.debug.tc.gpp.input.510736335" name="GNU C++ Input" superClass="nbeclipse.toolchain.nbde.debug.tc.gpp.input"/>
+</tool>
+<tool id="nbeclipse.toolchain.nbde.debug.tc.as.115132156" name="GNU Assembler" superClass="nbeclipse.toolchain.nbde.debug.tc.as">
+<option id="nbeclipse.toolchain.super.as.cpu.1994300703" superClass="nbeclipse.toolchain.super.as.cpu" value="-mcpu=5208" valueType="string"/>
+<inputType id="nbeclipse.toolchain.nbde.debug.tc.as.input.1005524636" name="GNU Assembler Input" superClass="nbeclipse.toolchain.nbde.debug.tc.as.input"/>
+</tool>
+<tool id="nbeclipse.toolchain.nbde.debug.tc.link.310163323" name="GNU C/C++ Linker" superClass="nbeclipse.toolchain.nbde.debug.tc.link">
+<option id="nbeclipse.toolchain.super.link.mcpu.580745293" superClass="nbeclipse.toolchain.super.link.mcpu" value="-mcpu=5208" valueType="string"/>
+<option id="nbeclipse.toolchain.super.link.ldflags.290668607" superClass="nbeclipse.toolchain.super.link.ldflags" value="-Wl -Wl,-n -T&quot;C:\nburn\MOD5270\lib\MOD5270.ld&quot; -Wl,-R&quot;C:\nburn\MOD5270\lib\sys.ld&quot;" valueType="string"/>
+<option id="nbeclipse.toolchain.nbde.debug.tc.link.libs.libs.925991324" superClass="nbeclipse.toolchain.nbde.debug.tc.link.libs.libs" valueType="stringList">
+<listOptionValue builtIn="false" value="&quot;C:\nburn\lib\DBMOD5270.a&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\lib\DBNetBurner.a&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\lib\FatFile.a&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\lib\DBrtl8711Library.a&quot;"/>
+<listOptionValue builtIn="false" value="&quot;C:\nburn\lib\DBdebugLibrary.a&quot;"/>
+</option>
+</tool>
+<tool id="nbeclipse.toolchain.nbde.debug.tc.objcopy.197009796" name="GNU ELF Objcopy" superClass="nbeclipse.toolchain.nbde.debug.tc.objcopy"/>
+<tool command="compcode" id="nbeclipse.toolchain.nbde.debug.tc.compcode.303753528" name="NetBurner Compcode" superClass="nbeclipse.toolchain.nbde.debug.tc.compcode">
+<option id="nbeclipse.toolchain.super.compcode.memrange.1556925303" superClass="nbeclipse.toolchain.super.compcode.memrange" value="0xffc08000 0xFFC80000" valueType="string"/>
+<option id="nbeclipse.toolchain.super.compcode.platform.1254261897" superClass="nbeclipse.toolchain.super.compcode.platform" value="MOD5270" valueType="string"/>
+</tool>
+</toolChain>
+</folderInfo>
+</configuration>
+</storageModule>
+<storageModule moduleId="scannerConfiguration">
+<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile"/>
+<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="makefileGenerator">
+<runAction arguments="-f ${project_name}_scd.mk" command="make" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileCPP">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileC">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+</storageModule>
+<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+</cconfiguration>
+</storageModule>
+<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+<project id="BubbleSorter.nbeclipse.toolchain.nbde.161106977" name="NetBurner Device Executable" projectType="nbeclipse.toolchain.nbde"/>
+</storageModule>
+</cproject>

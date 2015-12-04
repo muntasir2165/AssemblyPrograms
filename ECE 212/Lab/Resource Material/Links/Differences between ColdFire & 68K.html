@@ -1,0 +1,430 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!-- $$PAGE_TITLE$$='Differences between ColdFire &amp; 68K' -->
+<!-- $$SITE_ROOT$$='../..' -->
+
+<HTML>
+<HEAD>
+   <TITLE>Differences between ColdFire &amp; 68K</TITLE>
+<!-- %%COMMON_HEAD%% -->
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<LINK rel="stylesheet" type="text/css" href="../../styles.css">
+<SCRIPT language="JavaScript" type="text/javascript" src="../../menus.js"></SCRIPT>
+<!-- %%END%%-->
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<!-- %%COMMON_BODY_TOP%% -->
+<TABLE class="clsMenuBar" border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+    <TR>
+     <TD nowrap rowspan=2 height=80 width=150 vAlign=middle align=center><A href="http://www.microapl.co.uk/"><IMG border=0 width=119 height=68 alt="www.microapl.co.uk" src="../../images/MicroAPL_logo.gif"></A></TD>
+     <TD nowrap width=30 height=30 vAlign=top align=right bgcolor="#3176bb"><IMG border=0 width=30 height=30 alt="" src="../../images/MenuCorner2.gif"></TD>
+     <TD nowrap id=divMenuBar height=30 width="100%" bgcolor="#3176bb">
+      <SCRIPT language="JavaScript" type="text/javascript">
+       <!--
+         siteRoot = "../../";
+         genMenuBar();
+       //-->
+      </SCRIPT>
+      <NOSCRIPT>
+       <TABLE class=clsMenuBar border=0 cellPadding=0 cellSpacing=0>
+        <TBODY>
+         <TR>
+           <!-- Browser doesn't support scripts, so just create links here -->
+           <TD nowrap class=clsMenuBarItem><A class=clsMenuBarLink href="../../index.html"             ><FONT color="#FFFFFF">Home</FONT></A>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+           <TD nowrap class=clsMenuBarItem><A class=clsMenuBarLink href="../../Porting/index.html"     ><FONT color="#FFFFFF">Code Migration</FONT></A>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+           <TD nowrap class=clsMenuBarItem><A class=clsMenuBarLink href="../../Porting/freetools.html"><FONT color="#FFFFFF">Free Embedded Tools</FONT></A>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+           <TD nowrap class=clsMenuBarItem><A class=clsMenuBarLink href="../../apl/index.html"         ><FONT color="#FFFFFF">APLX</FONT></A>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+           <TD nowrap class=clsMenuBarItem><A class=clsMenuBarLink href="../../profile.html"           ><FONT color="#FFFFFF">Company</FONT></A>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+           <TD nowrap class=clsMenuBarItem><A class=clsMenuBarLink href="../../contact.html"           ><FONT color="#FFFFFF">Contact&nbsp;us</FONT></A>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+           <TD nowrap width="100%"><!-- Use up any remaining width --></TD>
+         </TR>
+        </TBODY>
+       </TABLE>
+      </NOSCRIPT>
+
+     </TD>
+    </TR>
+    <TR>
+     <TD nowrap height=45 colspan=2 vAlign=bottom>
+      <!-- Height should be height of logo cell (75) less height of menu bar (30) -->
+      <H1 class=clsMenuBar>Differences between ColdFire &amp; 68K</H1>
+     </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<!-- %%END%% -->
+
+<!-- Two-column table to hold left navigation bar and content -->
+<table class="LeftLinks" cellpadding="0" cellspacing="0" border="0">
+ <tr>
+
+<!-- Left navigation bar -->
+<td nowrap bgcolor="#E6E6E6" valign="top" width="160" height="200">
+<p class="LeftLinks">&nbsp;<br>
+
+<A class="LeftLinks" HREF="overview.html">ColdFire Tools</a><br>
+<A class="LeftLinks" HREF="../../CFInit/cfinit_main.html">ColdFire Init</a><br>
+<A class="LeftLinks" HREF="index.html">Porting from 68K</a><br>
+<A class="LeftLinks" HREF="cf_68k_diffs.html">&nbsp;&nbsp;<b>Differences</b></a><br>
+<A class="LeftLinks" HREF="pa68k_cf.html">&nbsp;&nbsp;PortAsm</a><br>
+<A class="LeftLinks" HREF="cf68klib.html">&nbsp;&nbsp;CF68KLib</a><br>
+<br>
+<A class="LeftLinks" HREF="../../MACInit/overview.html">MAC7100 Tools</a><br>
+<A class="LeftLinks" HREF="../../MACInit/macinit_main.html">MAC Init</a><br>
+<br>
+<A class="LeftLinks" HREF="../../Partner/index.html">Partners</a><br>
+
+</p>
+</td>
+ 
+<!-- Content -->  
+<td width="600" valign="top">
+
+<H3>Differences between 680x0 family and ColdFire</H3>
+
+<P>Although the ColdFire architecture is closely related to the
+680x0, there are many simplifications to the instruction set. Nearly
+all of the differences are omissions from the 680x0 instruction set
+and addressing modes. This means that (with a few important
+exceptions detailed below), a 680x0 instruction which is implemented
+in ColdFire behaves in exactly the same way under the two
+architectures. In fact, almost all user-level (and much
+supervisor-level) ColdFire code can be run unchanged on a 68020 or
+later 680x0 processor (apart from new instructions introduced in the
+Version 4 ColdFire core). The converse, however, is not the case.
+</P>
+
+<P>In outline, the main omissions fall into five categories:</P>
+
+<UL>
+   <LI>Missing addressing modes
+   
+   <LI>Missing instructions
+   
+   <LI>Non-availability of word- and byte-forms of nearly all
+   arithmetic and logical instructions
+   
+   <LI>Many instructions act only on registers, not on memory
+   
+   <LI>Restrictions on available addressing modes for particular
+   instructions
+   
+   <LI>Simplification of the supervisor-level programming model
+</UL>
+
+<H4>Principles behind the differences</H4>
+
+<P>In order to understand the ColdFire instruction set in relation to
+that of the 680x0, it helps to have an appreciation of why the
+simplifications have been made. The philosophy behind ColdFire is
+influenced by the success of RISC processors in providing high
+performance - for a given degree of chip complexity - by eliminating
+seldom-used instructions and complex addressing modes, and by
+regularizing the instruction set to make it easier for the hardware
+to optimize despatch of the instruction stream.</P>
+
+<P>However, standard RISC processors such as the PowerPC achieve high
+performance at the expense of low code density, in part because all
+instructions are the same width (generally 4 bytes) and also because
+only very simple addressing modes are available. In addition, RISC
+processors do not allow direct modification of memory locations; all
+memory reads and writes have to go via registers. This all means that
+programs compiled for RISC processors tend to be substantially larger
+than those compiled for CISC architectures such as the 680x0. This
+penalty does not greatly matter for desktop systems or servers
+with 32MB or more of RAM, but for embedded applications it can be a
+significant disadvantage, both in terms of system cost and power
+consumption.</P>
+
+<P>The ColdFire architecture - which Freescale Semiconductor characterizes as
+"Variable-Length RISC" - aims to share many of the speed advantages
+of RISC, without losing too much of the code density advantages of
+the 680x0 family. Like most modern processor architectures, it is
+optimized for code written in C or C++, and instructions which are
+not frequently generated by compilers are amongst those removed from
+the instruction set. Some of the complex addressing modes - again not
+important for compilers - are eliminated, and the additional hardware
+complexities involved in supporting arithmetic operations on bytes
+and words also disappear. In order to regularize the instruction
+stream, all ColdFire instructions are either 2, 4 or 6 bytes wide;
+this is why certain combinations of source and destination operands
+are not available.</P>
+
+<H4>Missing addressing modes</H4>
+
+<P>The ColdFire addressing modes are quite similar to those of the
+original 68000, i.e. without the extensions introduced in the 68020
+and later processors, but with some differences in indexed
+addressing. Compared with a 68020 or later processor, the comparison
+is as follows:</P>
+
+<H5>Fully supported:</H5>
+
+<UL>
+   <LI>Data Register Direct
+   
+   <LI>Address Register Direct
+   
+   <LI>Address Register Indirect
+   
+   <LI>Post-increment
+   
+   <LI>Pre-decrement
+   
+   <LI>Displacement (16-bit displacement)
+   
+   <LI>PC Displacement (16-bit displacement)
+   
+   <LI>Absolute Short
+   
+   <LI>Absolute Long
+   
+   <LI>Immediate
+</UL>
+
+<H5>Partially supported:</H5>
+
+<UL>
+   <LI>Indexed
+   
+   <LI>PC Indexed
+</UL>
+
+<P>The restrictions on these two modes are:</P>
+
+<UL>
+   <LI>The displacement constant is 8-bit only;
+   
+   <LI>"Zero-suppressed" registers are not supported;
+   
+   <LI>The Index register can only be handled as a Long. Word-length
+   index registers are not supported.
+   
+   <LI>The scale factor must be 1, 2, or 4. Scale factors of 8 are
+   not supported.
+</UL>
+
+<H5>Not implemented at all:</H5>
+
+<UL>
+   <LI>Memory-indirect post-indexed
+   
+   <LI>Memory-indirect pre-indexed
+   
+   <LI>PC-indirect post-indexed
+   
+   <LI>PC-indirect pre-indexed
+</UL>
+
+<P>Note that further restrictions may be imposed on the addressing
+modes supported by particular instructions, even if a particular
+addressing mode is itself available on ColdFire.</P>
+
+<H4>Missing instructions</H4>
+
+<P>A number of instructions are not implemented at all under
+ColdFire. These include:</P>
+
+<P>DBcc, EXG, RTR, RTD, CMPM,</P>
+
+<P>ROL, ROR, ROXL, ROXR, MOVE16</P>
+
+<P>ABCD, SBCD, NBCD</P>
+
+<P>BFCHG, BFCLR, BFEXTS, BFEXTU</P>
+
+<P>BFFFO, BFINS, BFSET, BFTST</P>
+
+<P>CALLM, RTM, PACK, UNPK</P>
+
+<P>CHK, CHK2, CMP2, CAS, CAS2, TAS <I>(restored in V4 core)</I>,</P>
+
+<P>BKPT, BGND, LPSTOP, TBLU, TBLS, TBLUN, TBLSN</P>
+
+<P>TRAPV, TRAPcc, MOVEP, MOVES, RESET</P>
+
+<P>ORI to CCR, EORI to CCR, ANDI to CCR</P>
+
+<P>In addition, DIVS and DIVU (with some differences from the 680x0
+equivalents) are available on some ColdFire processors but not
+others. MULU and MULS producing a 64-bit result are not implemented,
+but 16 x 16 producing 32-bit, and 32 x 32 producing (truncated)
+32-bit, are available.</P>
+
+<H4>Long-word forms only</H4>
+
+<P>Most arithmetic and logical instructions can act on Long words
+only. This applies to:</P>
+
+<P>ADD, ADDA, ADDI, ADDQ, ADDX, AND, ANDI, ASL, ASR</P>
+
+<P>CMP, CMPI <I>(word/byte forms re-introduced in version 4 core)</I>
+</P>
+
+<P>CMPA, EOR, EORI, LSL, LSR,</P>
+
+<P>NEG, NEGX, NOT, OR, ORI,</P>
+
+<P>SUB, SUBA, SUBI, SUBQ, SUBX</P>
+
+<P>MOVEM.W has also been removed from the instruction set.</P>
+
+<P>In fact, the only instructions which do act on the full set of
+byte, word and long operands are CLR, MOVE and TST (and CMP and CMPI
+in the version 4 core). EXT.W, EXTB.L and EXT.L survive, as do MULx.W
+and MULx.L</P>
+
+<H4>Instructions which act only on registers, not on memory</H4>
+
+<P>Some arithmetic instructions cannot act directly on memory - the
+destination must be a register. This applies to:</P>
+
+<P>ADDI, ADDX, ANDI, CMPI, ASL, ASR, LSL, LSR,</P>
+
+<P>NEG, NEGX, NOT, EORI, ORI, SUBI, SUBX, Scc</P>
+
+<P>Note that ADDQ and SUBQ <B>can</B> act directly on memory.</P>
+
+<H4>Restrictions on addressing modes for particular instructions
+</H4>
+
+<P>Even where a particular memory addressing mode does exist in
+ColdFire, some instructions are subject to further restrictions.
+Often, this is because of the limit of six bytes as the maximum
+length of a single instruction. Specific restrictions include:</P>
+
+<UL>
+   <LI>Some combinations of addressing modes for MOVE are disallowed.
+   If the source addressing mode is Displacement or PC Displacement,
+   the destination addressing mode cannot be Indexed or Absolute. If
+   the source addressing mode is Indexed, PC-Indexed, Absolute
+   or Immediate, the destination addressing mode cannot be Indexed,
+   Displacement, or Absolute.
+   
+   <LI>The addressing modes for MOVEM are restricted to only
+   Displacement and Indexed - no Pre-decrement or Post-increment!
+   
+   <LI>For BTST, BSET, BCLR and BCHG, if the source operand is a
+   static bit number, the destination cannot be Indexed or Absolute
+   memory.
+</UL>
+
+<H4>Miscellaneous Omissions</H4>
+
+<P>There are a few miscellaneous omissions for specific instructions:
+</P>
+
+<UL>
+   <LI>LINK.L is not supported
+   
+   <LI>MOVE to CCR/SR: Source must be Immediate or Data Register
+   
+   <LI>MOVE from CCR/SR: Destination must be data register
+   
+   <LI>BSR and Bcc accept only an 8- or 16-bit displacement in
+   version 2 and version 3 cores (32-bit displacements are
+   reintroduced in version 4)
+</UL>
+
+<H4>Instructions which behave differently from the 680x0 equivalent
+</H4>
+
+<P>In most cases, an instruction/addressing mode which does
+exist in ColdFire behaves exactly like its 680x0 equivalent, which
+makes it easy for experienced 680x0 programmers to understand
+ColdFire code. It also means that user-mode code written for ColdFire can
+generally run unchanged on a 680x0 processor, provided the new ColdFire-only instructions are not used.</P>
+
+<P>However, there are a few subtle cases where the ColdFire
+instruction is not exactly the same as its 680x0 counterpart. The
+most important of these is that multiply instructions (MULU and MULS)
+do not set the overflow bit. This means that a 680x0 code sequence
+which checks for overflow on multiply may assemble and run under
+ColdFire, but give incorrect results.</P>
+
+<P>ASL and ASR also differ in that they do not set the overflow bit -
+but this is less likely to cause problems for real programs!</P>
+
+<H4>Simplification of the supervisor programming model</H4>
+
+<P>Various members of the 68000 family have different register sets
+available at the supervisor level. The most important simplification
+in ColdFire's supervisor-level model is that there is only one stack
+pointer, shared for all code including interrupts, supervisor-level
+services, and user code. It follows from this that, on ColdFire, it
+is never safe to write below the stack, since any interrupt which
+occurs would overwrite the stored data. (Writing below the stack,
+though not recommended, is possible in some 680x0 systems in user
+mode, because interrupts cause a switch to the Interrupt or
+Supervisor Stack Pointer). A further issue is that ColdFire
+processors automatically align the stack to a four-byte boundary when
+an exception occurs, which can cause problems if code is reading or
+writing at a fixed offset from the stack pointer. In fact, it is
+strongly recommended (for performance reasons) that the ColdFire
+stack should be kept long-word aligned at all times.</P>
+
+<H4>New features in ColdFire Version 4 core</H4>
+
+<P>Version 4 of the ColdFire core architecture re-introduces some
+familiar 680x0 instructions, and also adds some new instructions. The
+main changes are:</P>
+
+<P><B><I>Reintroduced:</I></B></P>
+
+<UL>
+   <LI>32-bit displacement forms of BSR, Bcc and BRA
+   
+   <LI>Byte and Word forms of CMP and CMPI
+   
+   <LI>Slight relaxation of restrictions in addressing modes for MOVE
+   
+   <LI>Restoration of the TAS instruction
+</UL>
+
+<P><B><I>New:</I></B></P>
+
+<UL>
+   <LI>MOV3Q for moving immediate values in the range -1 to 7 to
+   destination
+   
+   <LI>MVS moves and sign-extends in one operation
+   
+   <LI>MVZ moves and zero-extends in one operation
+   
+   <LI>SATS Saturate register if overflow set
+</UL>
+
+<table class="clsMenuBar" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td nowrap height="30" width="100%" bgcolor="#3176bb">&nbsp;&nbsp; 
+<a class="BottomLinks" href="../../index.html" target="_top">Home</a> &nbsp;&nbsp; 
+<a class="BottomLinks" href= "../index.html">Porting Tools</a> &nbsp;&nbsp; 
+<a class="BottomLinks" href="../PortAsm.html">PortAsm</a> &nbsp;&nbsp; 
+<a class="BottomLinks" href="../../asm2c/index.html">Relogix</a> &nbsp;&nbsp; 
+<a class="BottomLinks" href="../Mimic68.html">Mimic</a> &nbsp;&nbsp; 
+<a class="BottomLinks" href="../services.html">Services</a> &nbsp;&nbsp; 
+</td>
+</tr>
+</tbody>
+</table>
+
+<!-- End content column and the main table -->
+</td>
+</tr>
+</table>
+
+<!-- %%COMMON_BODY_TAIL%% -->
+<p><font face="verdana" color="#29639c" size="-3">Copyright &copy; 1996-2010 MicroAPL Ltd</font></p>
+
+<SCRIPT language="JavaScript" type="text/javascript">
+ <!--
+  // For Mac, generate the popup menus at the very end
+  genMenus();
+ //-->
+</SCRIPT>
+<!-- %%END%% -->
+</BODY>
+</HTML>
